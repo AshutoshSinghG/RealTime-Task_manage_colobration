@@ -71,7 +71,7 @@ export const Dashboard = () => {
             case 'assigned':
                 filtered = filtered.filter(task => {
                     const assignedId = typeof task.assignedToId === 'object'
-                        ? task.assignedToId._id
+                        ? task.assignedToId.id
                         : task.assignedToId;
                     return assignedId === user.id;
                 });
@@ -79,7 +79,7 @@ export const Dashboard = () => {
             case 'created':
                 filtered = filtered.filter(task => {
                     const creatorId = typeof task.creatorId === 'object'
-                        ? task.creatorId._id
+                        ? task.creatorId.id
                         : task.creatorId;
                     return creatorId === user.id;
                 });
@@ -121,14 +121,14 @@ export const Dashboard = () => {
         const now = new Date();
         const assigned = tasks.filter(task => {
             const assignedId = typeof task.assignedToId === 'object'
-                ? task.assignedToId._id
+                ? task.assignedToId.id
                 : task.assignedToId;
             return assignedId === user.id;
         }).length;
 
         const created = tasks.filter(task => {
             const creatorId = typeof task.creatorId === 'object'
-                ? task.creatorId._id
+                ? task.creatorId.id
                 : task.creatorId;
             return creatorId === user.id;
         }).length;
