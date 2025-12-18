@@ -1,6 +1,8 @@
 import { io, Socket } from 'socket.io-client';
 
-const SOCKET_URL = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000';
+// Get the API URL and remove /api suffix for socket connection
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const SOCKET_URL = API_URL.replace('/api', '');
 
 let socket: Socket | null = null;
 
@@ -13,12 +15,15 @@ export const initializeSocket = (): Socket => {
         return socket;
     }
 
+    console.log('🔌 Connecting to socket:', SOCKET_URL);
+
     socket = io(SOCKET_URL, {
         withCredentials: true,  // Important: sends cookies with socket connection
         autoConnect: true,
         reconnection: true,
         reconnectionAttempts: 5,
-        reconnectionDelay: 1000
+        reconnectionDelay: 1000,
+        transports: ['websocket', 'polling'] // Try WebSocket first, fallback to polling
     });
 
     socket.on('connect', () => {
