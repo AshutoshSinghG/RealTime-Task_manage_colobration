@@ -1,25 +1,18 @@
-# 📋 AbleBase Task Manager
+# AbleBase Task Manager
 
 A full-stack, real-time collaborative task management application built with the MERN stack featuring Socket.io for instant updates across multiple users.
-
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Socket.io](https://img.shields.io/badge/Socket.io-black?style=flat&logo=socket.io&badgeColor=010101)](https://socket.io/)
-
 ---
 
-## ✨ Features
+## Features
 
-### 🎯 Core Functionality
+### Core Functionality
 - **Complete CRUD Operations** - Create, read, update, and delete tasks with 7 comprehensive fields
 - **Real-Time Collaboration** - Instant updates using Socket.io when any user creates, edits, or deletes tasks
 - **Task Assignment** - Assign tasks to team members with instant notifications
 - **Smart Permissions** - Only task creators can delete tasks (enforced on frontend & backend)
 - **Rich Task Details** - Title, description, due date, priority, status, creator, and assignee
 
-### 📊 Dashboard Features
+### Dashboard Features
 - **Multiple Views**
   - All Tasks
   - Assigned to Me
@@ -29,12 +22,12 @@ A full-stack, real-time collaborative task management application built with the
 - **Advanced Filtering** - By status, priority, and assignment
 - **Flexible Sorting** - By due date, priority, or status
 
-### 🔔 Notifications
+### Notifications
 - **In-App Notifications** - Real-time alerts when assigned to tasks
 - **Unread Count Badge** - Visual indicator for new notifications
 - **Notification History** - View all past notifications
 
-### 🎨 User Experience
+### User Experience
 - **Overdue Detection** - Automatic highlighting of past-due tasks
 - **Inline Editing** - Update tasks directly in the dashboard
 - **Color-Coded UI** - Visual priority and status indicators
@@ -42,7 +35,7 @@ A full-stack, real-time collaborative task management application built with the
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -80,7 +73,7 @@ npm run dev
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 18** with TypeScript
@@ -102,7 +95,7 @@ npm run dev
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 AbleBase-Task-Manager/
@@ -136,7 +129,7 @@ AbleBase-Task-Manager/
 
 ---
 
-## 🔧 Environment Variables
+## Environment Variables
 
 ### Backend (.env)
 ```env
@@ -154,7 +147,7 @@ VITE_API_URL=http://localhost:5000/api
 
 ---
 
-## 📖 API Documentation
+## API Documentation
 
 ### Authentication
 | Method | Endpoint | Description |
@@ -188,7 +181,7 @@ VITE_API_URL=http://localhost:5000/api
 
 ---
 
-## 🎮 Usage Examples
+## Usage Examples
 
 ### Creating a Task
 1. Login to your account
@@ -218,19 +211,19 @@ VITE_API_URL=http://localhost:5000/api
 
 ---
 
-## 🔐 Security Features
+## Security Features
 
-- ✅ **JWT Authentication** - Secure token-based auth
-- ✅ **HttpOnly Cookies** - XSS attack prevention
-- ✅ **Password Hashing** - bcrypt with salt rounds
-- ✅ **CORS Protection** - Whitelist allowed origins
-- ✅ **Input Validation** - Server-side validation
-- ✅ **Authorization Checks** - Role-based permissions
-- ✅ **Secure Socket.io** - Cookie-based authentication
+- **JWT Authentication** - Secure token-based auth
+- **HttpOnly Cookies** - XSS attack prevention
+- **Password Hashing** - bcrypt with salt rounds
+- **CORS Protection** - Whitelist allowed origins
+- **Input Validation** - Server-side validation
+- **Authorization Checks** - Role-based permissions
+- **Secure Socket.io** - Cookie-based authentication
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ### Manual Testing
 ```bash
@@ -245,7 +238,7 @@ npm run dev
 npm run dev
 # Open http://localhost:5173
 # Check browser console for:
-# - ✅ Socket connected successfully
+# -  Socket connected successfully
 # - No CORS errors
 ```
 
@@ -259,7 +252,7 @@ npm run dev
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Socket Connection Issues
 
@@ -269,7 +262,7 @@ npm run dev
 1. Clear browser cookies (F12 → Application → Cookies)
 2. Logout and login again
 3. Verify backend is running
-4. Check console for `✅ Socket connected successfully`
+4. Check console for ` Socket connected successfully`
 
 ### Tasks Not Updating in Real-Time
 
@@ -288,7 +281,7 @@ npm run dev
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
 ### Backend Deployment (Heroku/Railway/Render)
 ```bash
@@ -318,9 +311,9 @@ npm run build
 
 ---
 
-## 🎯 Roadmap
+##  Roadmap
 
-### ✅ Completed
+### Completed
 - [x] Complete CRUD operations
 - [x] Real-time Socket.io integration
 - [x] Task assignment system
@@ -342,63 +335,3 @@ npm run build
 - [ ] Export to CSV/PDF
 
 ---
-
-## 📝 License
-
-MIT License
-
-Copyright (c) 2025 AbleBase Task Manager
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 💬 Support
-
-For support, email support@ablebase.com or open an issue in the repository.
-
----
-
-## 🙏 Acknowledgments
-
-- [React](https://reactjs.org/)
-- [Socket.io](https://socket.io/)
-- [MongoDB](https://www.mongodb.com/)
-- [TanStack Query](https://tanstack.com/query/)
-- [Lucide Icons](https://lucide.dev/)
-
----
-
-**Made with ❤️ for AbleBase**
-
-**Status:** ✅ Production Ready
-
-**Last Updated:** December 18, 2025
