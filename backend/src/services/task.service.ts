@@ -38,10 +38,8 @@ export class TaskService {
                 : (task.assignedToId as any).toString())
             : null;
 
-        console.log(`📡 Emitting task:created to creator: ${taskCreatorId}`);
         this.io?.to(taskCreatorId).emit('task:created', task);
         if (taskAssigneeId && taskAssigneeId !== taskCreatorId) {
-            console.log(`📡 Emitting task:created to assignee: ${taskAssigneeId}`);
             this.io?.to(taskAssigneeId).emit('task:created', task);
         }
 
@@ -87,10 +85,8 @@ export class TaskService {
                 : (updatedTask.assignedToId as any).toString())
             : null;
 
-        console.log(`📡 Emitting task:updated to creator: ${creatorId}`);
         this.io?.to(creatorId).emit('task:updated', updatedTask);
         if (assigneeId && assigneeId !== creatorId) {
-            console.log(`📡 Emitting task:updated to assignee: ${assigneeId}`);
             this.io?.to(assigneeId).emit('task:updated', updatedTask);
         }
 
@@ -124,10 +120,8 @@ export class TaskService {
         });
 
         // Emit to both creator and assignee for real-time deletion
-        console.log(`📡 Emitting task:deleted to creator: ${creatorId}, taskId: ${taskId}`);
         this.io?.to(creatorId).emit('task:deleted', { taskId });
         if (assigneeId && assigneeId !== creatorId) {
-            console.log(`📡 Emitting task:deleted to assignee: ${assigneeId}, taskId: ${taskId}`);
             this.io?.to(assigneeId).emit('task:deleted', { taskId });
         }
     }

@@ -119,15 +119,12 @@ export const Dashboard = () => {
     const stats = useMemo(() => {
         if (!user) return { assigned: 0, created: 0, overdue: 0 };
 
-        console.log('📊 Calculating stats for user:', user.id, 'from tasks:', tasks.length);
-
         const now = new Date();
         const assigned = tasks.filter(task => {
             const assignedId = typeof task.assignedToId === 'object'
                 ? (task.assignedToId.id || (task.assignedToId as any)._id)
                 : task.assignedToId;
             const match = assignedId === user.id;
-            if (match) console.log('✅ Assigned task found:', task.title);
             return match;
         }).length;
 
@@ -136,7 +133,6 @@ export const Dashboard = () => {
                 ? (task.creatorId.id || (task.creatorId as any)._id)
                 : task.creatorId;
             const match = creatorId === user.id;
-            if (match) console.log('✅ Created task found:', task.title);
             return match;
         }).length;
 
@@ -145,7 +141,6 @@ export const Dashboard = () => {
             return dueDate < now && task.status !== TaskStatus.COMPLETED;
         }).length;
 
-        console.log('📊 Stats result:', { assigned, created, overdue });
         return { assigned, created, overdue };
     }, [tasks, user]);
 

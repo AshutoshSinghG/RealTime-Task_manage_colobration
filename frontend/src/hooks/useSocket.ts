@@ -10,32 +10,23 @@ export const useSocket = () => {
 
         if (!socket) return;
 
-        const handleTaskCreated = (data: any) => {
-            console.log('✅ Socket event received: task:created', data);
-            // Invalidate all task queries to refresh the dashboard
+        const handleTaskCreated = () => {
             queryClient.invalidateQueries({ queryKey: ['tasks'] });
         };
 
-        const handleTaskUpdated = (data: any) => {
-            console.log('✅ Socket event received: task:updated', data);
-            // Invalidate all task queries to refresh the dashboard
+        const handleTaskUpdated = () => {
             queryClient.invalidateQueries({ queryKey: ['tasks'] });
         };
 
-        const handleTaskDeleted = (data: any) => {
-            console.log('✅ Socket event received: task:deleted', data);
-            // Invalidate all task queries to refresh the dashboard
+        const handleTaskDeleted = () => {
             queryClient.invalidateQueries({ queryKey: ['tasks'] });
         };
 
-        const handleTaskAssigned = (data: any) => {
-            console.log('✅ Socket event received: task:assigned', data);
-            // Invalidate all task queries to refresh the dashboard
+        const handleTaskAssigned = () => {
             queryClient.invalidateQueries({ queryKey: ['tasks'] });
         };
 
-        const handleNotificationNew = (data: any) => {
-            console.log('✅ Socket event received: notification:new', data);
+        const handleNotificationNew = () => {
             queryClient.invalidateQueries({ queryKey: ['notifications'] });
         };
 

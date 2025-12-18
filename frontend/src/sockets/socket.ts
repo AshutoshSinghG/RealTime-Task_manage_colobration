@@ -15,32 +15,25 @@ export const initializeSocket = (): Socket => {
         return socket;
     }
 
-    console.log('🔌 Connecting to socket:', SOCKET_URL);
-
     socket = io(SOCKET_URL, {
-        withCredentials: true,  // Important: sends cookies with socket connection
+        withCredentials: true,
         autoConnect: true,
         reconnection: true,
         reconnectionAttempts: 5,
         reconnectionDelay: 1000,
-        transports: ['websocket', 'polling'] // Try WebSocket first, fallback to polling
+        transports: ['websocket', 'polling']
     });
 
     socket.on('connect', () => {
-        console.log('✅ Socket connected successfully');
+        console.log('Socket connected');
     });
 
     socket.on('disconnect', () => {
-        console.log('❌ Socket disconnected');
+        console.log('Socket disconnected');
     });
 
     socket.on('connect_error', (error) => {
         console.error('Socket connection error:', error.message);
-    });
-
-    // Log all received events for debugging
-    socket.onAny((eventName, ...args) => {
-        console.log(`📩 Socket event received: ${eventName}`, args);
     });
 
     return socket;
