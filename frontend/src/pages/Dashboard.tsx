@@ -28,6 +28,7 @@ type ViewMode = 'all' | 'assigned' | 'created' | 'overdue';
 
 export const Dashboard = () => {
     const { user } = useAuth();
+    useSocket(); // Enable real-time updates
     const [filters, setFilters] = useState<TaskFilters>({});
     const [showCreateForm, setShowCreateForm] = useState(false);
     const [viewMode, setViewMode] = useState<ViewMode>('all');
@@ -176,7 +177,7 @@ export const Dashboard = () => {
                 </div>
 
                 <div
-                    className={`card cursor-pointer transition-all ${viewMode === 'created' ? 'ring-2 ring-blue-500' : 'hover:shadow-lg'}`}
+                    className={`card cursor - pointer transition - all ${viewMode === 'created' ? 'ring-2 ring-blue-500' : 'hover:shadow-lg'} `}
                     onClick={() => setViewMode('created')}
                 >
                     <div className="flex items-center justify-between">
@@ -191,7 +192,7 @@ export const Dashboard = () => {
                 </div>
 
                 <div
-                    className={`card cursor-pointer transition-all ${viewMode === 'overdue' ? 'ring-2 ring-red-500' : 'hover:shadow-lg'}`}
+                    className={`card cursor - pointer transition - all ${viewMode === 'overdue' ? 'ring-2 ring-red-500' : 'hover:shadow-lg'} `}
                     onClick={() => setViewMode('overdue')}
                 >
                     <div className="flex items-center justify-between">
@@ -213,7 +214,7 @@ export const Dashboard = () => {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${viewMode === 'all'
                         ? 'bg-primary-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
+                        } `}
                 >
                     All Tasks
                 </button>
@@ -222,7 +223,7 @@ export const Dashboard = () => {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${viewMode === 'assigned'
                         ? 'bg-primary-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
+                        } `}
                 >
                     Assigned to Me ({stats.assigned})
                 </button>
@@ -231,7 +232,7 @@ export const Dashboard = () => {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${viewMode === 'created'
                         ? 'bg-primary-600 text-white'
                         : 'bg-gray-100 text-gray-200'
-                        }`}
+                        } `}
                 >
                     Created by Me ({stats.created})
                 </button>
@@ -240,7 +241,7 @@ export const Dashboard = () => {
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${viewMode === 'overdue'
                         ? 'bg-red-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                        }`}
+                        } `}
                 >
                     Overdue ({stats.overdue})
                 </button>
@@ -388,10 +389,10 @@ export const Dashboard = () => {
             {/* Tasks List */}
             <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                    {viewMode === 'all' && `All Tasks (${filteredTasks.length})`}
-                    {viewMode === 'assigned' && `Tasks Assigned to Me (${filteredTasks.length})`}
-                    {viewMode === 'created' && `Tasks Created by Me (${filteredTasks.length})`}
-                    {viewMode === 'overdue' && `Overdue Tasks (${filteredTasks.length})`}
+                    {viewMode === 'all' && `All Tasks(${filteredTasks.length})`}
+                    {viewMode === 'assigned' && `Tasks Assigned to Me(${filteredTasks.length})`}
+                    {viewMode === 'created' && `Tasks Created by Me(${filteredTasks.length})`}
+                    {viewMode === 'overdue' && `Overdue Tasks(${filteredTasks.length})`}
                 </h2>
 
                 {isLoading ? (

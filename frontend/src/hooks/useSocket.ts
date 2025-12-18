@@ -12,28 +12,32 @@ export const useSocket = () => {
 
         if (!socket) return;
 
-        const handleTaskCreated = (_task: Task) => {
-            console.log('✅ Socket event received: task:created', _task);
+        const handleTaskCreated = (data: any) => {
+            console.log('✅ Socket event received: task:created', data);
+            // Invalidate all task queries to refresh the dashboard
             queryClient.invalidateQueries({ queryKey: ['tasks'] });
         };
 
-        const handleTaskUpdated = (_task: Task) => {
-            console.log('✅ Socket event received: task:updated', _task);
+        const handleTaskUpdated = (data: any) => {
+            console.log('✅ Socket event received: task:updated', data);
+            // Invalidate all task queries to refresh the dashboard
             queryClient.invalidateQueries({ queryKey: ['tasks'] });
         };
 
-        const handleTaskDeleted = (_data: { taskId: string }) => {
-            console.log('✅ Socket event received: task:deleted', _data);
+        const handleTaskDeleted = (data: any) => {
+            console.log('✅ Socket event received: task:deleted', data);
+            // Invalidate all task queries to refresh the dashboard
             queryClient.invalidateQueries({ queryKey: ['tasks'] });
         };
 
-        const handleTaskAssigned = (_data: { task: Task; assigneeId: string }) => {
-            console.log('✅ Socket event received: task:assigned', _data);
+        const handleTaskAssigned = (data: any) => {
+            console.log('✅ Socket event received: task:assigned', data);
+            // Invalidate all task queries to refresh the dashboard
             queryClient.invalidateQueries({ queryKey: ['tasks'] });
         };
 
-        const handleNotificationNew = (_notification: Notification) => {
-            console.log('✅ Socket event received: notification:new', _notification);
+        const handleNotificationNew = (data: any) => {
+            console.log('✅ Socket event received: notification:new', data);
             queryClient.invalidateQueries({ queryKey: ['notifications'] });
         };
 
